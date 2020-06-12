@@ -4,32 +4,31 @@ public class game
 {
 	public static void main(String[] args)
 	{
-		boolean getTar = false;//是否猜到答案
-		boolean repeat;//4位數是否有重複
-		boolean tarDone = false;//答案型態是否正確
+		boolean getTar = false;
+		boolean repeat;
+		boolean tarDone = false;
 
 		double n;
 		int ni;
-		int a = 0;//幾個A
-		int b = 0;//幾個B
+		int a = 0;
+		int b = 0;
 		String out;
 		String tar = "";//Target in String
+		
 		List<Integer> ab = new ArrayList<>();
-
 		List<Integer> numbers = new ArrayList<>();
-    	for(int i = 0; i < 10; i++)
-    	{
-   			numbers.add(i);
-    	}
+		
+    		for(int i = 0; i < 10; i++)
+    		{
+   				numbers.add(i);
+    		}
     
-    	Collections.shuffle(numbers);
+    		Collections.shuffle(numbers);
     
-    	for(int i = 0; i < 4; i++)
-    	{
-      		tar += numbers.get(i).toString();
+    		for(int i = 0; i < 4; i++)
+    		{
+      			tar += numbers.get(i).toString();
    		}
-    	// System.out.println(tar);
-		// 開始猜數字
 		while(!getTar)
 		{
 			repeat = false;
