@@ -17,13 +17,15 @@ public class game
 		List<Integer> ab = new ArrayList<>();
 
 		List<Integer> numbers = new ArrayList<>();
-    	for(int i = 0; i < 10; i++){
+    	for(int i = 0; i < 10; i++)
+    	{
    			numbers.add(i);
     	}
     
     	Collections.shuffle(numbers);
     
-    	for(int i = 0; i < 4; i++){
+    	for(int i = 0; i < 4; i++)
+    	{
       		tar += numbers.get(i).toString();
    		}
     	// System.out.println(tar);
@@ -57,46 +59,43 @@ public class game
 			{
 				System.out.println("Repeat number in string");
 					
-      		}
+      			}
 			else if(Objects.equals(tar, ans))//判斷答案是否正確
 			{
 				System.out.println("You are correct!!");
 				break;
-      		}
-      		else
-      		{
-      			a = 0;
-      			b = 0;
-      			for(int i = 0; i < 4; i++)
+      			}
+      			else
       			{
-      				for(int j = 0; j < 4; j++)
+      				a = 0;
+      				b = 0;
+      				for(int i = 0; i < 4; i++)
       				{
-      					if(Objects.equals(ans.charAt(i), tar.charAt(j)))
+      					for(int j = 0; j < 4; j++)
       					{
-      						if(i == j)
-      						{	      			
-      							a += 1;
-      						}
-      						else
+      						if(Objects.equals(ans.charAt(i), tar.charAt(j)))
       						{
-      							b += 1;
+      							if(i == j)
+      							{	      			
+      								a += 1;
+      							}
+      							else
+      							{
+      								b += 1;
+      							}
       						}
       					}
       				}
-      			}
       			
-      			ab.add(a);
-      			ab.add(b);
+      				ab.add(a);
+      				ab.add(b);
 
-      			out = ab.get(0).toString()+"A"+ab.get(1).toString()+"B";
-      			System.out.println(out);
-
-      			ab.remove(0);
-      			ab.remove(0);
-      		}
-      		/*寫"判斷幾A幾B"程式，使用 Objects.equals(a,b) 替代 a==b */
-
-
+      				out = ab.get(0).toString()+"A"+ab.get(1).toString()+"B";
+      				System.out.println(out);
+	
+      				ab.remove(0);
+      				ab.remove(0);
+      			}
 		}
 	}
 }
